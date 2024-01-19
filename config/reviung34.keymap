@@ -15,8 +15,9 @@
 #define GAME 7
 
 // Mouse keys
-#define U_MOUSE_MOVE_MAX 1500
+#define U_MOUSE_MOVE_MAX 1300
 #define U_MOUSE_SCROLL_MAX 100
+
 #undef MOVE_UP
 #undef MOVE_DOWN
 #undef MOVE_LEFT
@@ -25,14 +26,15 @@
 #undef SCROLL_DOWN
 #undef SCROLL_LEFT
 #undef SCROLL_RIGHT
-#define MOVE_UP MOVE_VERT(-U_MOUSE_MOVE_MAX)
-#define MOVE_DOWN MOVE_VERT(U_MOUSE_MOVE_MAX)
-#define MOVE_LEFT MOVE_HOR(-U_MOUSE_MOVE_MAX)
-#define MOVE_RIGHT MOVE_HOR(U_MOUSE_MOVE_MAX)
-#define SCROLL_UP SCROLL_VERT(U_MOUSE_SCROLL_MAX)
-#define SCROLL_DOWN SCROLL_VERT(-U_MOUSE_SCROLL_MAX)
-#define SCROLL_LEFT SCROLL_HOR(-U_MOUSE_SCROLL_MAX)
-#define SCROLL_RIGHT SCROLL_HOR(U_MOUSE_SCROLL_MAX)
+
+#define MOVE_UP MOVE_Y(-U_MOUSE_MOVE_MAX)
+#define MOVE_DOWN MOVE_Y(U_MOUSE_MOVE_MAX)
+#define MOVE_LEFT MOVE_X(-U_MOUSE_MOVE_MAX)
+#define MOVE_RIGHT MOVE_X(U_MOUSE_MOVE_MAX)
+#define SCROLL_UP SCRL_Y(U_MOUSE_SCROLL_MAX)
+#define SCROLL_DOWN SCRL_Y(-U_MOUSE_SCROLL_MAX)
+#define SCROLL_LEFT SCRL_X(-U_MOUSE_SCROLL_MAX)
+#define SCROLL_RIGHT SCRL_X(U_MOUSE_SCROLL_MAX)
 
 // Misc binds
 #define PAUSE PAUSE_BREAK
@@ -44,23 +46,22 @@
 // Mouse speeds
 &mmv {
   time-to-max-speed-ms = <300>;
+  acceleration-exponent = <1>;
+  delay-ms = <0>;
 };
 
-&mwh {
-  time-to-max-speed-ms = <600>;
+&msc {
+  time-to-max-speed-ms = <800>;
+  acceleration-exponent = <1>;
+  delay-ms = <0>;
 };
 
 / {
     chosen {
-        // 34 keys.
         zmk,matrix_transform = &dual_1u_transform;
-
-        // 33 keys. Center two thumb keys replaced by a single 2u key. Remember to adjust your
-        // keymap accordingly!
         // zmk,matrix_transform = &single_2u_transform;
     };
-};
-/ {
+
     combos {
       compatible = "zmk,combos";
       combo_ae {
@@ -106,6 +107,7 @@
           layers = <0>;
       };
     };
+
     behaviours {
      td13: num_dance_0 {
         compatible = "zmk,behavior-tap-dance";
@@ -176,7 +178,7 @@
             bindings = <
 &none    &none    &none     &none     &none   &kp LC(Y)        &kp LC(V)        &kp LC(C)       &kp LC(X)         &kp LC(Z)
 &kp LGUI &kp LALT &kp LSHFT &kp LCTRL &none   &mmv MOVE_LEFT   &mmv MOVE_DOWN   &mmv MOVE_UP    &mmv MOVE_RIGHT   &kp PSCRN
-&none    &none    &none     &none     &none   &mwh SCROLL_LEFT &mwh SCROLL_DOWN &mwh SCROLL_UP  &mwh SCROLL_RIGHT &kp LS(INSERT)
+&none    &none    &none     &none     &none   &msc SCROLL_LEFT &msc SCROLL_DOWN &msc SCROLL_UP  &msc SCROLL_RIGHT &kp LS(INSERT)
                             &kp TAB   &trans  &mkp LCLK        &mkp RCLK
             >;
         };
@@ -194,11 +196,10 @@
         symbols {
             display-name = "Symbols";
             bindings = <
-&kp RA(RBKT) &kp RA(NUSBS) &kp LS(N7) &kp LS(N8)    &kp LS(N9)  &none  &none     &none     &none    &none
+&kp RA(RBKT) &kp RA(NUBS)  &kp LS(N7) &kp LS(N8)    &kp LS(N9)  &none  &none     &none     &none    &none
 &kp LS(BSLH) &kp LS(MINUS) &kp RA(N4) &kp LS(N5)    &kp LS(N6)  &none  &kp RCTRL &kp RSHFT &kp RALT &kp RGUI
 &none        &none         &kp LS(N1) &kp LS(N2)    &kp LS(N3)  &none  &none     &none     &none    &none
                                       &kp LS(COMMA) &kp LS(DOT) &none  &trans
-
             >;
         };
 
@@ -209,10 +210,9 @@
 &kp RA(N7) &kp RA(N0)   &kp RA(N3)    &kp RA(N5) &none      &none  &kp RCTRL &kp RSHFT &kp RALT &kp RGUI
 &kp RA(N8) &kp RA(N9)   &kp RA(TILDE) &kp RA(N2) &none      &none  &none     &none     &none    &none
                                       &kp LS(N8) &kp LS(N9) &none  &none
-
             >;
         };
-_layer
+
         functions {
             display-name = "Functions";
             bindings = <
@@ -220,7 +220,6 @@ _layer
 &kp F11 &none &kp F4 &kp F5 &kp F6     &none        &kp RCTRL    &kp RSHFT &kp LALT  &kp RGUI
 &kp F10 &none &kp F1 &kp F2 &kp F3     &bt BT_0     &bt BT_1     &bt BT_2  &bt BT_3  &bt BT_CLR
                      &none  &kp C_MUTE &kp C_VOL_DN &kp C_VOL_UP
-
             >;
         };
 
@@ -231,7 +230,6 @@ _layer
 &kp LSHFT   &kp A    &kp S    &kp D     &kp F  &kp H  &kp J  &kp K     &kp L &kp ENTER
 &kp LCTRL   &kp Z    &kp X    &kp C     &kp V  &kp N  &kp M  &kp COMMA &td79 &kp N0
                      &kp LALT &kp SPACE &td13  &td46  
-
             >;
         };
     };
