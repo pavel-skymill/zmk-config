@@ -216,10 +216,10 @@
         functions {
             display-name = "Functions";
             bindings = <
-&kp F12 &none &kp F7 &kp F8 &kp F9     &kp LC(Y)    &kp LC(V)    &kp LC(C) &kp LC(X) &kp LC(Z)
-&kp F11 &none &kp F4 &kp F5 &kp F6     &none        &kp RCTRL    &kp RSHFT &kp LALT  &kp RGUI
-&kp F10 &none &kp F1 &kp F2 &kp F3     &bt BT_0     &bt BT_1     &bt BT_2  &bt BT_3  &bt BT_CLR
-                     &none  &kp C_MUTE &kp C_VOL_DN &kp C_VOL_UP
+&kp F12 &none &kp F7 &kp F8 &kp F9     &rgb_ug RGB_TOG &rgb_ug RGB_EFF &rgb_ug RGB_HUI &rgb_ug RGB_SAI &rgb_ug RGB_BRI 
+&kp F11 &none &kp F4 &kp F5 &kp F6     &rgb_ug RGB_SPI &kp RCTRL       &kp RSHFT       &kp LALT        &kp RGUI
+&kp F10 &none &kp F1 &kp F2 &kp F3     &bt BT_0        &bt BT_1        &bt BT_2        &bt BT_3        &bt BT_CLR
+                     &none  &kp C_MUTE &kp C_VOL_DN    &kp C_VOL_UP
             >;
         };
 
