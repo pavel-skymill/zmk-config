@@ -41,6 +41,15 @@
 #define BT_2 BT_SEL 2
 #define BT_3 BT_SEL 3
 
+// Mouse speeds
+&mmv {
+  time-to-max-speed-ms = <300>;
+};
+
+&mwh {
+  time-to-max-speed-ms = <600>;
+};
+
 / {
     chosen {
         // 34 keys.
@@ -51,21 +60,6 @@
         // zmk,matrix_transform = &single_2u_transform;
     };
 };
-
-&mmv {
-  time-to-max-speed-ms = <300>;
-};
-
-&mwh {
-  time-to-max-speed-ms = <600>;
-};
-
-&lt {
-  tapping-term-ms = <180>;
-  quick-tap-ms = <180>;
-};
-
-
 / {
     combos {
       compatible = "zmk,combos";
