@@ -56,6 +56,12 @@
   delay-ms = <0>;
 };
 
+// Layer tap
+&lt {
+  tapping-term-ms = <180>;
+  quick-tap-ms = <180>;
+};
+
 / {
     chosen {
         zmk,matrix_transform = &dual_1u_transform;
@@ -196,9 +202,9 @@
         symbols {
             display-name = "Symbols";
             bindings = <
-&kp RA(RBKT) &kp RA(NUBS)  &kp LS(N7) &kp LS(N8)    &kp LS(N9)  &none  &none     &none     &none    &none
-&kp LS(BSLH) &kp LS(MINUS) &kp RA(N4) &kp LS(N5)    &kp LS(N6)  &none  &kp RCTRL &kp RSHFT &kp RALT &kp RGUI
-&none        &none         &kp LS(N1) &kp LS(N2)    &kp LS(N3)  &none  &none     &none     &none    &none
+&kp RA(RBKT) &kp RA(NUBS)  &kp LS(N7) &kp LS(N8)    &kp LS(N9)  &none  &none     &kp C_PREV &kp C_PP &kp C_NEXT
+&kp LS(BSLH) &kp LS(MINUS) &kp RA(N4) &kp LS(N5)    &kp LS(N6)  &none  &kp RCTRL &kp RSHFT  &kp RALT &kp RGUI
+&none        &none         &kp LS(N1) &kp LS(N2)    &kp LS(N3)  &none  &none     &none      &none    &none
                                       &kp LS(COMMA) &kp LS(DOT) &none  &trans
             >;
         };
@@ -206,9 +212,9 @@
         extras {
             display-name = "Extras";
             bindings = <
-&kp NUBS   &kp LS(NUBS) &kp RA(NUBS)  &kp RA(N6) &none      &none  &none     &none     &none    &kp CAPS
-&kp RA(N7) &kp RA(N0)   &kp RA(N3)    &kp RA(N5) &none      &none  &kp RCTRL &kp RSHFT &kp RALT &kp RGUI
-&kp RA(N8) &kp RA(N9)   &kp RA(TILDE) &kp RA(N2) &none      &none  &none     &none     &none    &none
+&kp NUBS   &kp LS(NUBS) &kp RA(NUBS)  &kp RA(N6) &none      &none  &none     &kp C_VOL_DN &kp C_MUTE  &kp C_VOL_UP
+&kp RA(N7) &kp RA(N0)   &kp RA(N3)    &kp RA(N5) &none      &none  &kp RCTRL &kp RSHFT    &kp RALT &kp RGUI
+&kp RA(N8) &kp RA(N9)   &kp RA(TILDE) &kp RA(N2) &none      &none  &none     &none        &none    &none
                                       &kp LS(N8) &kp LS(N9) &none  &none
             >;
         };
@@ -219,7 +225,7 @@
 &kp F12 &none &kp F7 &kp F8 &kp F9     &rgb_ug RGB_SPI &rgb_ug RGB_EFF &rgb_ug RGB_HUI &rgb_ug RGB_SAI &rgb_ug RGB_BRI 
 &kp F11 &none &kp F4 &kp F5 &kp F6     &rgb_ug RGB_TOG &kp RCTRL       &kp RSHFT       &kp LALT        &kp RGUI
 &kp F10 &none &kp F1 &kp F2 &kp F3     &bt BT_0        &bt BT_1        &bt BT_2        &bt BT_3        &bt BT_CLR
-                     &none  &kp C_MUTE &kp C_VOL_DN    &kp C_VOL_UP
+                     &trans  &trans &trans    &trans
             >;
         };
 
