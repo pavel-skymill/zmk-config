@@ -109,7 +109,7 @@
       combo_functions_layer {
           timeout-ms = <50>;
           key-positions = <31 32>;
-          bindings = <&lt FUNC TAB>;
+          bindings = <&lt FUNC ESC>;
           layers = <0>;
       };
     };
@@ -136,12 +136,12 @@
         tapping-term-ms = <200>;
         bindings = <&kp N7>, <&kp N8>, <&kp N9>;
       };
-     tdqtab: tab_dance {
+     tdesc: tab_dance {
         compatible = "zmk,behavior-tap-dance";
-        label = "TAP_DANCE_Q_TAB";
+        label = "TAP_DANCE_TAB_ESC";
         #binding-cells = <0>;
-        tapping-term-ms = <200>;
-        bindings = <&kp Q>, <&kp TAB>;
+        tapping-term-ms = <220>;
+        bindings = <&lt NAV TAB>, <&kp ESC>;
       };
       hm: homerow_mods {
         compatible = "zmk,behavior-hold-tap";
@@ -169,10 +169,10 @@
         base {
             display-name = "Base";
             bindings = <
-&tdqtab     &kp W       &kp E        &kp R       &kp T          &kp Y         &kp U         &kp I        &kp O      &kp P
-&hm LGUI A  &hm LALT S  &shm LSHFT D &hm LCTRL F &kp G          &kp H         &hm RCTRL J   &shm RSHFT K &hm RALT L &hm RGUI BSLH
-&kp Z       &kp X       &kp C        &kp V       &kp B          &kp N         &kp M         &kp COMMA    &kp DOT    &kp LS(N7)
-                                     &lt NAV ESC &lt MOUS SPACE &lt NUM ENTER &lt SYMB BSPC
+&kp Q      &kp W       &kp E        &kp R       &kp T          &kp Y         &kp U         &kp I        &kp O      &kp P
+&hm LGUI A &hm LALT S  &shm LSHFT D &hm LCTRL F &kp G          &kp H         &hm RCTRL J   &shm RSHFT K &hm RALT L &hm RGUI BSLH
+&kp Z      &kp X       &kp C        &kp V       &kp B          &kp N         &kp M         &kp COMMA    &kp DOT    &kp LS(N7)
+                                    &tdesc      &lt MOUS SPACE &lt NUM ENTER &lt SYMB BSPC
             >;
         };
 
