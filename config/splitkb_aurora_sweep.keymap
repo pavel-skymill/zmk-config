@@ -63,10 +63,6 @@
 };
 
 / {
-    chosen {
-        zmk,matrix_transform = &dual_1u_transform;
-        // zmk,matrix_transform = &single_2u_transform;
-    };
 
     combos {
       compatible = "zmk,combos";
