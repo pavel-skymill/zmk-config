@@ -109,7 +109,13 @@
       combo_functions_layer {
           timeout-ms = <50>;
           key-positions = <31 32>;
-          bindings = <&lt FUNC ESC>;
+          bindings = <&mo FUNC>;
+          layers = <0>;
+      };
+      combo_escape {
+          timeout-ms = <50>;
+          key-positions = <10 11>;
+          bindings = <&kp ESC>;
           layers = <0>;
       };
     };
@@ -135,13 +141,6 @@
         #binding-cells = <0>;
         tapping-term-ms = <200>;
         bindings = <&kp N7>, <&kp N8>, <&kp N9>;
-      };
-     tdesc: tab_dance {
-        compatible = "zmk,behavior-tap-dance";
-        label = "TAP_DANCE_TAB_ESC";
-        #binding-cells = <0>;
-        tapping-term-ms = <220>;
-        bindings = <&lt NAV TAB>, <&kp ESC>;
       };
       hm: homerow_mods {
         compatible = "zmk,behavior-hold-tap";
@@ -170,9 +169,9 @@
             display-name = "Base";
             bindings = <
 &kp Q      &kp W       &kp E        &kp R       &kp T          &kp Y         &kp U         &kp I        &kp O      &kp P
-&hm LGUI A &hm LALT S  &shm LSHFT D &hm LCTRL F &kp G          &kp H         &hm RCTRL J   &shm RSHFT K &hm RALT L &hm RGUI BSLH
+&hm LGUI A &hm LALT S  &shm LSHFT D &hm LCTRL F &kp G          &kp H         &hm RCTRL J   &shm RSHFT K &hm LALT L &hm RGUI BSLH
 &kp Z      &kp X       &kp C        &kp V       &kp B          &kp N         &kp M         &kp COMMA    &kp DOT    &kp LS(N7)
-                                    &tdesc      &lt MOUS SPACE &lt NUM ENTER &lt SYMB BSPC
+                                    &lt NAV TAB &lt MOUS SPACE &lt NUM ENTER &lt SYMB BSPC
             >;
         };
 
