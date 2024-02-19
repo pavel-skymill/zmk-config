@@ -172,10 +172,10 @@
         navigation {
             display-name = "Navigation";
             bindings = <
-&kp C_VOL_DN &kp C_MUTE &kp C_VOL_UP &none     &none     &kp LC(Y) &kp LC(V) &kp LC(C) &kp LC(X) &kp LC(Z)
-&kp LGUI     &kp LALT   &kp LSHFT    &kp LCTRL &none     &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT &kp LS(INSERT)
-&kp C_PREV   &kp C_PP   &kp C_NEXT   &none     &none     &kp HOME  &kp PG_DN &kp PG_UP &kp END   &kp PSCRN
-                        &trans       &kp SPC   &kp ESC &kp DEL
+&kp ESC     &none    &kp C_VOL_DN &kp C_MUTE &kp C_VOL_UP &kp LC(Y) &kp LC(V) &kp LC(C) &kp LC(X) &kp LC(Z)
+&kp LGUI    &kp LALT &kp LSHFT    &kp LCTRL  &none        &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT &kp LS(INSERT)
+&kp C_PREV  &kp C_PP &kp C_NEXT   &none      &none        &kp HOME  &kp PG_DN &kp PG_UP &kp END   &kp PSCRN
+                     &trans       &kp SPC    &kp ENTER    &kp DEL
             >;
         };
 
