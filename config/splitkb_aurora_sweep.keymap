@@ -15,7 +15,7 @@
 #define GAME 7
 
 // Mouse keys
-#define U_MOUSE_MOVE_MAX 1100
+#define U_MOUSE_MOVE_MAX 1300
 #define U_MOUSE_SCROLL_MAX 100
 
 #undef MOVE_UP
@@ -45,7 +45,7 @@
 
 // Mouse speeds
 &mmv {
-  time-to-max-speed-ms = <300>;
+  time-to-max-speed-ms = <200>;
   acceleration-exponent = <1>;
   delay-ms = <0>;
 };
@@ -58,8 +58,8 @@
 
 // Layer tap
 &lt {
-  tapping-term-ms = <160>;
-  quick-tap-ms = <160>;
+  tapping-term-ms = <150>;
+  quick-tap-ms = <150>;
 };
 
 / {
@@ -101,17 +101,11 @@
           key-positions = <30 33>;
           bindings = <&mo EXTR>;
           layers = <0>;
-      };     
+      };
       combo_functions_layer {
           timeout-ms = <50>;
           key-positions = <31 32>;
           bindings = <&mo FUNC>;
-          layers = <0>;
-      };
-      combo_escape {
-          timeout-ms = <50>;
-          key-positions = <10 11>;
-          bindings = <&kp ESC>;
           layers = <0>;
       };
     };
@@ -142,17 +136,17 @@
         compatible = "zmk,behavior-hold-tap";
         label = "HOMEROW_MODS";
         #binding-cells = <2>;
-        tapping-term-ms = <160>;
-        quick-tap-ms = <160>;
-        flavor = "tap-preferred";
+        tapping-term-ms = <220>;
+        quick-tap-ms = <220>;
+        flavor = "balanced";
         bindings = <&kp>, <&kp>;
       };
      shm: shift_homerow_mods {
         compatible = "zmk,behavior-hold-tap";
         label = "SHIFT_HOMEROW_MODS";
         #binding-cells = <2>;
-        tapping-term-ms = <160>;
-        quick-tap-ms = <160>;
+        tapping-term-ms = <200>;
+        quick-tap-ms = <200>;
         flavor = "balanced";
         bindings = <&kp>, <&kp>;
       };
@@ -165,7 +159,7 @@
             display-name = "Base";
             bindings = <
 &kp Q      &kp W       &kp E        &kp R       &kp T          &kp Y         &kp U         &kp I        &kp O      &kp P
-&hm LGUI A &hm LALT S  &shm LSHFT D &hm LCTRL F &kp G          &kp H         &hm RCTRL J   &shm RSHFT K &hm RALT L &hm RGUI BSLH
+&hm LGUI A &hm LALT S  &shm LSHFT D &hm LCTRL F &kp G          &kp H         &hm RCTRL J   &shm RSHFT K &hm LALT L &hm RGUI BSLH
 &kp Z      &kp X       &kp C        &kp V       &kp B          &kp N         &kp M         &kp COMMA    &kp DOT    &kp LS(N7)
                                     &lt NAV TAB &lt MOUS SPACE &lt NUM ENTER &lt SYMB BSPC
             >;
@@ -174,10 +168,10 @@
         navigation {
             display-name = "Navigation";
             bindings = <
-&kp C_VOL_DN &kp C_MUTE &kp C_VOL_UP &none     &none     &kp LC(Y) &kp LC(V) &kp LC(C) &kp LC(X) &kp LC(Z)
-&kp LGUI     &kp LALT   &kp LSHFT    &kp LCTRL &none     &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT &kp LS(INSERT)
-&kp C_PREV   &kp C_PP   &kp C_NEXT   &none     &none     &kp HOME  &kp PG_DN &kp PG_UP &kp END   &kp PSCRN
-                        &trans       &kp SPC   &kp ENTER &kp DEL
+&kp ESC     &none    &none     &none     &none     &kp LC(Y) &kp LC(V) &kp LC(C) &kp LC(X) &kp LC(Z)
+&kp LGUI    &kp LALT &kp LSHFT &kp LCTRL &none     &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT &kp LS(INSERT)
+&none       &none    &none     &none     &none     &kp HOME  &kp PG_DN &kp PG_UP &kp END   &kp PSCRN
+                     &trans    &kp SPC   &kp ENTER &kp DEL
             >;
         };
 
@@ -204,9 +198,9 @@
         symbols {
             display-name = "Symbols";
             bindings = <
-&kp RA(RBKT) &kp RA(NUBS)  &kp LS(N7) &kp LS(N8)    &kp LS(N9)  &none  &none     &kp C_PREV &kp C_PP &kp C_NEXT
-&kp LS(BSLH) &kp LS(MINUS) &kp RA(N4) &kp LS(N5)    &kp LS(N6)  &none  &kp RCTRL &kp RSHFT  &kp RALT &kp RGUI
-&none        &kp LS(N0)    &kp LS(N1) &kp LS(N2)    &kp LS(N3)  &none  &none     &none      &none    &none
+&kp RA(RBKT) &kp RA(NUBS)  &kp LS(N7) &kp LS(N8)    &kp LS(N9)  &none  &none     &kp C_VOL_DN &kp C_MUTE &kp C_VOL_UP
+&kp LS(BSLH) &kp LS(MINUS) &kp RA(N4) &kp LS(N5)    &kp LS(N6)  &none  &kp RCTRL &kp RSHFT    &kp RALT   &kp RGUI
+&none        &kp LS(N0)    &kp LS(N1) &kp LS(N2)    &kp LS(N3)  &none  &none     &kp C_PREV   &kp C_PP   &kp C_NEXT
                                       &kp LS(COMMA) &kp LS(DOT) &none  &trans
             >;
         };
@@ -224,7 +218,7 @@
         functions {
             display-name = "Functions";
             bindings = <
-&kp F12 &none &kp F7 &kp F8 &kp F9 &none    &none     &none     &none    &none
+&kp F12 &none &kp F7 &kp F8 &kp F9 &none    &none     &none     &none    &kp CAPS
 &kp F11 &none &kp F4 &kp F5 &kp F6 &none    &kp RCTRL &kp RSHFT &kp LALT &kp RGUI
 &kp F10 &none &kp F1 &kp F2 &kp F3 &bt BT_0 &bt BT_1  &bt BT_2  &bt BT_3 &bt BT_CLR
                      &none  &trans &trans   &none
