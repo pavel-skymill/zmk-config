@@ -163,7 +163,7 @@
             display-name = "Base";
             bindings = <
 &kp Q      &kp W       &kp E        &kp R       &kp T          &kp Y         &kp U         &kp I        &kp O      &kp P
-&hm LGUI A &hm LALT S  &shm LSHFT D &hm LCTRL F &kp G          &kp H         &hm RCTRL J   &shm RSHFT K &hm LALT L &hm RGUI BSLH
+&hm LGUI A &hm LALT S  &shm LSHFT D &hm LCTRL F &kp G          &kp H         &hm RCTRL J   &shm RSHFT K &hm LALT L &hm RGUI SEMI
 &kp Z      &kp X       &kp C        &kp V       &kp B          &kp N         &kp M         &kp COMMA    &kp DOT    &kp LS(N7)
                                     &lt NAV TAB &lt MOUS SPACE &lt NUM ENTER &lt SYMB BSPC
             >;
@@ -194,7 +194,7 @@
             bindings = <
 &kp LS(EQUAL) &kp LS(N0)   &kp N7 &kp N8    &kp N9    &none  &none     &none     &none    &none
 &kp RA(MINUS) &kp RA(NUBS) &kp N4 &kp N5    &kp N6    &none  &kp RCTRL &kp RSHFT &kp RALT &kp RGUI
-&none         &kp N0       &kp N1 &kp N2    &kp N3    &none  &none     &none     &none    &none
+&kp BSLH      &kp N0       &kp N1 &kp N2    &kp N3    &none  &none     &none     &none    &none
                                   &kp MINUS &kp SLASH &trans &none
             >;
         };
