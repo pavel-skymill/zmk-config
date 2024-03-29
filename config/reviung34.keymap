@@ -58,8 +58,8 @@
 
 // Layer tap
 &lt {
-  tapping-term-ms = <150>;
-  quick-tap-ms = <150>;
+  tapping-term-ms = <120>;
+  quick-tap-ms = <120>;
 };
 
 / {
@@ -234,7 +234,7 @@
             bindings = <
 &mt TAB ESC &kp Q    &kp W    &kp E     &kp R  &kp Y  &kp U  &kp I     &kp O &kp P
 &kp LSHFT   &kp A    &kp S    &kp D     &kp F  &kp H  &kp J  &kp K     &kp L &kp ENTER
-&kp LCTRL   &kp Z    &kp X    &kp C     &kp V  &kp N  &kp M  &kp COMMA &td79 &kp N0
+&kp LCTRL   &kp Z    &kp X    &kp C     &kp V  &kp N  &kp M  &kp F3    &td79 &kp N0
                      &kp LALT &kp SPACE &td13  &td46  
             >;
         };
