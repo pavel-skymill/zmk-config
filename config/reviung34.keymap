@@ -140,8 +140,8 @@
         compatible = "zmk,behavior-hold-tap";
         label = "HOMEROW_MODS";
         #binding-cells = <2>;
-        tapping-term-ms = <220>;
-        quick-tap-ms = <220>;
+        tapping-term-ms = <140>;
+        quick-tap-ms = <140>;
         flavor = "balanced";
         bindings = <&kp>, <&kp>;
       };
@@ -149,8 +149,8 @@
         compatible = "zmk,behavior-hold-tap";
         label = "SHIFT_HOMEROW_MODS";
         #binding-cells = <2>;
-        tapping-term-ms = <200>;
-        quick-tap-ms = <200>;
+        tapping-term-ms = <120>;
+        quick-tap-ms = <120>;
         flavor = "balanced";
         bindings = <&kp>, <&kp>;
       };
