@@ -13,6 +13,7 @@
 #define EXTR 5
 #define FUNC 6
 #define GAME 7
+#define CLMK 8
 
 // Mouse keys
 #define U_MOUSE_MOVE_MAX 1300
@@ -101,6 +102,12 @@
           bindings = <&tog GAME>;
           layers = <0 7>;
       };
+      combo_colemak_layer {
+          timeout-ms = <50>;
+          key-positions = <7 8 9>;
+          bindings = <&tog CLMK>;
+          layers = <0 8>;
+      };
       combo_extras_layer {
           timeout-ms = <50>;
           key-positions = <30 33>;
@@ -141,8 +148,8 @@
         compatible = "zmk,behavior-hold-tap";
         label = "HOMEROW_MODS";
         #binding-cells = <2>;
-        tapping-term-ms = <200>;
-        quick-tap-ms = <200>;
+        tapping-term-ms = <180>;
+        quick-tap-ms = <180>;
         flavor = "tap-preferred";
         bindings = <&kp>, <&kp>;
       };
@@ -150,8 +157,8 @@
         compatible = "zmk,behavior-hold-tap";
         label = "SHIFT_HOMEROW_MODS";
         #binding-cells = <2>;
-        tapping-term-ms = <210>;
-        quick-tap-ms = <210>;
+        tapping-term-ms = <190>;
+        quick-tap-ms = <190>;
         flavor = "tap-preferred";
         bindings = <&kp>, <&kp>;
       };
@@ -237,6 +244,16 @@
 &kp LSHFT   &kp A    &kp S    &kp D     &kp F  &kp H  &kp J  &kp K     &kp L &kp ENTER
 &kp LCTRL   &kp Z    &kp X    &kp C     &kp V  &kp N  &kp M  &kp F3    &kp F5 &kp N0
                      &kp LALT &kp SPACE &td13  &td46  
+            >;
+        };
+
+        colemak {
+            display-name = "Gaming";
+            bindings = <
+&kp Q      &kp W       &kp F        &kp P       &kp B          &kp J         &kp L         &kp U        &kp Y      &kp SEMI
+&hm LGUI A &hm LALT R  &shm LSHFT S &hm LCTRL T &kp G          &kp M         &hm RCTRL N   &shm RSHFT E &hm LALT I &hm RGUI O
+&kp Z      &kp X       &kp C        &kp D       &kp V          &kp K         &kp H         &kp COMMA    &kp DOT    &kp LS(N7)
+                                    &lt NAV TAB &lt MOUS SPACE &lt NUM ENTER &lt SYMB BSPC
             >;
         };
     };
