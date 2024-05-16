@@ -6,14 +6,14 @@
 
 // Layer shortcuts
 #define BASE 0
-#define NAV 1
-#define MOUS 2
-#define NUM 3
-#define SYMB 4
-#define EXTR 5
-#define FUNC 6
-#define GAME 7
-#define CLMK 8
+#define CLMK 1
+#define NAV  2
+#define MOUS 3
+#define NUM  4
+#define SYMB 5
+#define EXTR 6
+#define FUNC 7
+#define GAME 8
 
 // Mouse keys
 #define U_MOUSE_MOVE_MAX 1300
@@ -177,6 +177,16 @@
             >;
         };
 
+        colemak {
+            display-name = "Colemak";
+            bindings = <
+&kp Q      &kp W       &kp F        &kp P       &kp B          &kp J         &kp L         &kp U        &kp Y      &kp SEMI
+&hm LGUI A &hm LALT R  &shm LSHFT S &hm LCTRL T &kp G          &kp M         &hm RCTRL N   &shm RSHFT E &hm LALT I &hm RGUI O
+&kp Z      &kp X       &kp C        &kp D       &kp V          &kp K         &kp H         &kp COMMA    &kp DOT    &kp LS(N7)
+                                    &lt NAV TAB &lt MOUS SPACE &lt NUM ENTER &trans
+            >;
+        };
+
         navigation {
             display-name = "Navigation";
             bindings = <
@@ -247,14 +257,5 @@
             >;
         };
 
-        colemak {
-            display-name = "Gaming";
-            bindings = <
-&kp Q      &kp W       &kp F        &kp P       &kp B          &kp J         &kp L         &kp U        &kp Y      &kp SEMI
-&hm LGUI A &hm LALT R  &shm LSHFT S &hm LCTRL T &kp G          &kp M         &hm RCTRL N   &shm RSHFT E &hm LALT I &hm RGUI O
-&kp Z      &kp X       &kp C        &kp D       &kp V          &kp K         &kp H         &kp COMMA    &kp DOT    &kp LS(N7)
-                                    &lt NAV TAB &lt MOUS SPACE &lt NUM ENTER &lt SYMB BSPC
-            >;
-        };
     };
 };
